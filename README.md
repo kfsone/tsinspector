@@ -24,11 +24,11 @@ import asyncio, os, time
 
 import tsinspector
 inspector = tsinspector.Inspector(
-		topdir=os.getcwd(),   # Path to crawl
-		end=time.time(),	  # High end of the timeframe
-		window=10*60,		  # Scan for a 10 minute window
-		report_errors=lambda path, err: print(repr(err), path)
-		)
+        topdir=os.getcwd(),   # Path to crawl
+        end=time.time(),      # High end of the timeframe
+        window=10*60,         # Scan for a 10 minute window
+        report_errors=lambda path, err: print(repr(err), path)
+        )
 loop = asyncio.get_event_loop()
 loop.run_until_complete(inspector.inspect())
 # loop.close() if you aren't using it any more.
